@@ -56,7 +56,7 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"  style="font-size: 0.7em;">Corresponding Author<sup>*</sup></span>
+            <span class="author-block"  style="font-size: 0.7em;"><sup>*</sup>Indicates Corresponding Author</span>
             <br>
             <span class="author-block">Vision & Learning Lab | </span>
             <span class="author-block">Inha University, South Korea</span>
@@ -66,7 +66,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -74,34 +74,24 @@
                   <span>Paper</span>
                 </a>
               </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
                   </a>
+              </span>
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
               </span>
             </div>
 
@@ -124,6 +114,26 @@
         free-viewpoint
         portraits.
       </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser" style="background-color: #fafafa;">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title has-text-centered">Abstract</h2>
+      <p class="has-text-justified">
+        We introduce a new template-free tracking paradigm based solely on natural language, capable of tracking 
+        an arbitrary object and seamlessly switching to a new target without box initialization. Our key idea is 
+        to localize an object via vision-language (VL) correlation. However, using the correlation alone is brittle 
+        under large search regions due to spatial uncertainty and ambiguous VL saliency. To resolve these, we propose 
+        MVLM, a memory-based vision-language margin confidence that integrates vision–language correlation, encoder 
+        prediction, and temporal memory. MVLM dynamically gates the search region—switching between compact ROI 
+        (Region of Interest) search and global re-localization—to reduce spatial uncertainty. Theoretically, we derive 
+        bounds that connect the MVLM score to tracking probability, characterizing mis-localization within ROI and 
+        ROI-exclusion probabilities. Through extensive evaluation, we validate our theorems and achieve state-of-the-art 
+        performance on several benchmarks (TNL2K, LaSOT, OTB99, and MGIT) using only language guidance.
+      </p>
     </div>
   </div>
 </section>
@@ -397,7 +407,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a 
+            This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page.You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a 
             <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>

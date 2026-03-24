@@ -172,10 +172,57 @@
       <div class="column is-four-fifths">
         <h2 class="title">Comparative Results (Quantitative)</h2>
         <figure class="image">
-          <img src="./static/images/Quantitative_results_MVLM.png" alt="MVLM Overall Framework">
+          <img src="./static/images/Quantitative_results_MVLM.png" alt="Quantitative Results">
         </figure>
         <p class="has-text-centered" style="margin-top: 0.8rem; font-size: 0.9rem; color: #555;">
           <strong>Table 1–2.</strong> Comparison of SOTA vision-language trackers on TNL2K, LaSOT, OTB99, and MGIT benchmarks, and ablation studies of component methods (bottom).
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title">Comparative Results (Qualitative)</h2>
+        <figure class="image">
+          <img src="./static/images/Qualitative_results_MVLM.png" alt="Qualitative Results">
+        </figure>
+        <p class="has-text-centered" style="margin-top: 0.8rem; font-size: 0.9rem; color: #555;">
+          <strong>Figure 4.</strong> Qualitative comparison on three challenging sequences from TNL2K. 
+          MVLM (<span style="color: #e00; font-weight: bold;">red</span>) consistently localizes the 
+          language-described target, while JointNLT 
+          (<span style="color: #00c; font-weight: bold;">blue</span>) and UVLTrack 
+          (<span style="color: #cc0; font-weight: bold;">yellow</span>) frequently drift to distractors 
+          or lose the target under occlusion. Ground truth shown in 
+          <span style="color: #0a0; font-weight: bold;">green</span>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background-color: #fafafa;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title">Conclusion</h2>
+        <p class="has-text-justified">
+          In this work, we address template-free tracking where the tracker localizes objects 
+          using only natural language, without visual templates or box initialization. We show 
+          that VL correlation margin is the fundamental tracking signal for reliable tracking: 
+          under a sub-Gaussian noise model, larger margins between the target and distractors 
+          exponentially reduce mis-localization probability. However, margins can degrade under 
+          challenging scenarios. To address this, we propose MVLM confidence that integrates 
+          correlation margins and temporal memory to dynamically gate between local ROI search 
+          and global re-localization. Theoretically, we derive bounds decomposing failure into 
+          ROI exclusion and within-ROI mis-localization, justifying MVLM as a theoretically 
+          grounded gating mechanism. Extensive experiments validate our theoretical predictions 
+          and achieve state-of-the-art performance under language-only guidance, demonstrating 
+          that margin-based correlation provides a reliable foundation for template-free tracking 
+          in challenging scenarios.
         </p>
       </div>
     </div>

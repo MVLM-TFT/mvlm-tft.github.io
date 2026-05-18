@@ -25,9 +25,107 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
   <style>
-  /* body {
-    background: linear-gradient(to bottom, #ffffff 0%, #edf5f1 100%);
-  } */
+    /* ---------- Mobile responsiveness (≤ 768px) ---------- */
+    @media screen and (max-width: 768px) {
+      /* Hero publication title */
+      .publication-title.title.is-1 {
+        font-size: 1.55rem !important;
+        line-height: 1.25;
+      }
+
+      /* Section titles */
+      .section h2.title {
+        font-size: 1.35rem;
+      }
+
+      /* Tighter section padding */
+      .section {
+        padding: 1.25rem 1rem !important;
+      }
+
+      /* Hero authors row */
+      .publication-authors .author-block {
+        display: inline-block;
+        margin: 0 3px;
+        font-size: 0.95rem;
+      }
+      .publication-authors.is-size-5 {
+        font-size: 0.95rem !important;
+      }
+
+      /* Hero buttons (Paper / Code / arXiv) */
+      .publication-links .link-block {
+        display: inline-block;
+        margin: 4px 2px;
+      }
+      .publication-links .button {
+        font-size: 0.85rem !important;
+      }
+
+      /* Body paragraphs */
+      .has-text-justified, .content p {
+        font-size: 0.92rem;
+      }
+
+      /* Figures + captions */
+      figure.image img { max-width: 100%; height: auto; }
+      figure + p, .image + p { font-size: 0.8rem !important; }
+
+      /* ----- Demo Videos carousel ----- */
+      .gallery-carousel-container { padding: 0 30px; }
+      .gallery-carousel-wrapper { height: 240px; }
+      .gallery-iframe-wrap {
+        max-width: 95% !important;
+        height: 200px !important;
+      }
+      /* Hide the side peek videos on mobile — too crowded */
+      .gallery-slide.adjacent {
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+      .gallery-carousel-btn {
+        top: 120px !important;
+        width: 36px; height: 36px;
+      }
+      .gallery-query {
+        font-size: 0.85rem;
+        max-width: 95%;
+      }
+      .gallery-carousel-indicator {
+        width: 22px; height: 22px; font-size: 10px;
+      }
+
+      /* Citation code block — allow horizontal scroll, smaller font */
+      #BibTeX pre {
+        overflow-x: auto;
+        font-size: 0.7rem;
+        padding: 1rem 0.75rem;
+      }
+      #copy-bibtex-btn { top: 4px !important; right: 4px !important; }
+    }
+
+    /* ---------- Very small phones (≤ 480px) ---------- */
+    @media screen and (max-width: 480px) {
+      .publication-title.title.is-1 {
+        font-size: 1.25rem !important;
+      }
+      .section h2.title {
+        font-size: 1.15rem;
+      }
+      .publication-authors .author-block {
+        font-size: 0.85rem;
+      }
+      .publication-links .button {
+        font-size: 0.78rem !important;
+        padding-left: 0.7em;
+        padding-right: 0.7em;
+      }
+      .gallery-carousel-container { padding: 0 22px; }
+      .gallery-carousel-wrapper { height: 205px; }
+      .gallery-iframe-wrap { height: 165px !important; }
+      .gallery-carousel-btn { top: 102px !important; width: 32px; height: 32px; }
+      .gallery-carousel-btn svg { width: 18px; height: 18px; }
+    }
 </style>
 </head>
 <body>
@@ -40,7 +138,7 @@
           <h3 class="title is-1 is-3-mobile is-2-tablet publication-title">MVLM: Template-Free Tracking via Vision–Language Margin Confidence and Memory-Gated Tracking</h3>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="#">Dae-Hyeon Park</a>,
+              <a href="https://scholar.google.com/citations?user=7Pli4ScAAAAJ&hl=en">Dae-Hyeon Park</a>,
             </span>
             <span class="author-block">
               <a href="#">Mina Baek</a>,
@@ -107,34 +205,34 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <div class="columns is-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title has-text-centered">Abstract</h2>
-          <p class="has-text-justified">
-            We introduce a new template-free tracking paradigm based solely on natural language, capable of tracking 
-            an arbitrary object and seamlessly switching to a new target without box initialization. Our key idea is 
-            to localize an object via vision-language (VL) correlation. However, using the correlation alone is brittle 
-            under large search regions due to spatial uncertainty and ambiguous VL saliency. To resolve these, we propose 
-            MVLM, a memory-based vision-language margin confidence that integrates vision–language correlation, encoder 
-            prediction, and temporal memory. MVLM dynamically gates the search region—switching between compact ROI 
-            (Region of Interest) search and global re-localization—to reduce spatial uncertainty. Theoretically, we derive 
-            bounds that connect the MVLM score to tracking probability, characterizing mis-localization within ROI and 
-            ROI-exclusion probabilities. Through extensive evaluation, we validate our theorems and achieve state-of-the-art 
-            performance on several benchmarks (TNL2K, LaSOT, OTB99, and MGIT) using only language guidance.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title">Contribution</h2>
-        <ul style="list-style: decimal; padding-left: 1.5rem; line-height: 1.5; font-size: 0.9rem;">
+        <h2 class="title has-text-centered">Abstract</h2>
+        <p class="has-text-justified">
+          We introduce a new template-free tracking paradigm based solely on natural language, capable of tracking
+          an arbitrary object and seamlessly switching to a new target without box initialization. Our key idea is
+          to localize an object via vision-language (VL) correlation. However, using the correlation alone is brittle
+          under large search regions due to spatial uncertainty and ambiguous VL saliency. To resolve these, we propose
+          MVLM, a memory-based vision-language margin confidence that integrates vision–language correlation, encoder
+          prediction, and temporal memory. MVLM dynamically gates the search region—switching between compact ROI
+          (Region of Interest) search and global re-localization—to reduce spatial uncertainty. Theoretically, we derive
+          bounds that connect the MVLM score to tracking probability, characterizing mis-localization within ROI and
+          ROI-exclusion probabilities. Through extensive evaluation, we validate our theorems and achieve state-of-the-art
+          performance on several benchmarks (TNL2K, LaSOT, OTB99, and MGIT) using only language guidance.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 1rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title has-text-centered">Contribution</h2>
+        <ul style="list-style: decimal; padding-left: 1.5rem; line-height: 1.6;">
           <li style="margin-bottom: 0.4rem; text-align: justify;">
             Introducing a template-free, language-only tracking paradigm that follows arbitrary objects and <em>seamlessly switches</em> to new targets without box initialization, controlled purely by natural language.
           </li>
@@ -151,12 +249,14 @@
       </div>
     </div>
   </div>
-  
+</section>
+
+<section class="section" style="padding-top: 1rem;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-      <div class="column is-full">
+      <div class="column is-four-fifths">
         <h2 class="title has-text-centered">Main Framework</h2>
-        <figure class="image" style="box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12); border-radius: 6px; overflow: hidden;">
+        <figure class="image">
           <img src="./static/images/Main_framework_MVLM.png" alt="MVLM Overall Framework">
         </figure>
         <p class="has-text-centered" style="margin-top: 0.8rem; font-size: 0.9rem; color: #555;">
@@ -165,11 +265,13 @@
       </div>
     </div>
   </div>
+</section>
 
+<section class="section" style="padding-top: 1rem;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title">Comparative Results (Quantitative)</h2>
+        <h2 class="title has-text-centered">Comparative Results (Quantitative)</h2>
         <figure class="image">
           <img src="./static/images/Quantitative_results_MVLM.png" alt="Quantitative Results">
         </figure>
@@ -179,33 +281,268 @@
       </div>
     </div>
   </div>
+</section>
 
+<section class="section" style="padding-top: 1rem;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title">Comparative Results (Qualitative)</h2>
+        <h2 class="title has-text-centered">Comparative Results (Qualitative)</h2>
         <figure class="image">
           <img src="./static/images/Qualitative_results_MVLM.png" alt="Qualitative Results">
         </figure>
         <p class="has-text-centered" style="margin-top: 0.8rem; font-size: 0.9rem; color: #555;">
-          <strong>Figure 4.</strong> Qualitative comparison on three challenging sequences from TNL2K. 
-          MVLM (<span style="color: #e00; font-weight: bold;">red</span>) consistently localizes the 
-          language-described target, while JointNLT 
-          (<span style="color: #00c; font-weight: bold;">blue</span>) and UVLTrack 
-          (<span style="color: #cc0; font-weight: bold;">yellow</span>) frequently drift to distractors 
-          or lose the target under occlusion. Ground truth shown in 
+          <strong>Figure 4.</strong> Qualitative comparison on three challenging sequences from TNL2K.
+          MVLM (<span style="color: #e00; font-weight: bold;">red</span>) consistently localizes the
+          language-described target, while JointNLT
+          (<span style="color: #00c; font-weight: bold;">blue</span>) and UVLTrack
+          (<span style="color: #cc0; font-weight: bold;">yellow</span>) frequently drift to distractors
+          or lose the target under occlusion. Ground truth shown in
           <span style="color: #0a0; font-weight: bold;">green</span>.
         </p>
       </div>
     </div>
   </div>
 </section>
-  
-<section class="section">
+
+<section class="section" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title">Conclusion</h2>
+        <h2 class="title has-text-centered" style="margin-top: 0; margin-bottom: 0;">Demo Videos</h2>
+        <div class="gallery-carousel-container">
+          <div class="gallery-carousel-wrapper">
+            <div class="gallery-carousel-track" id="galleryCarouselTrack"></div>
+          </div>
+          <button class="gallery-carousel-btn gallery-carousel-btn-prev" type="button" aria-label="Previous" onclick="moveGalleryCarousel(-1)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="gallery-carousel-btn gallery-carousel-btn-next" type="button" aria-label="Next" onclick="moveGalleryCarousel(1)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          <div class="gallery-carousel-indicators" id="galleryCarouselIndicators"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .gallery-carousel-container { position: relative; width: 100%; padding: 0 56px; }
+    .gallery-carousel-wrapper { position: relative; height: 400px; overflow: hidden; }
+    .gallery-carousel-track { position: relative; width: 100%; height: 100%; }
+    .gallery-slide {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      opacity: 0; filter: blur(10px); pointer-events: none;
+      transition: all 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .gallery-slide.active { opacity: 1; filter: blur(0); z-index: 3; pointer-events: auto; }
+    .gallery-slide.adjacent { opacity: 0.85; filter: blur(0.5px); z-index: 2; }
+    .gallery-iframe-wrap {
+      position: relative;
+      width: 100%; max-width: 520px; height: 320px;
+      border: 2px solid #000; border-radius: 18px; background: #000;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28), 0 4px 10px rgba(0, 0, 0, 0.18);
+      transform: scale(0.78);
+      transition: all 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      overflow: hidden;
+    }
+    .gallery-slide.active .gallery-iframe-wrap {
+      transform: scale(1); border-radius: 10px;
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.35), 0 8px 18px rgba(0, 0, 0, 0.22);
+    }
+    .gallery-iframe-wrap iframe {
+      display: block;
+      width: 100%; height: 100%;
+      border: 0;
+      pointer-events: none;
+    }
+    .gallery-query {
+      margin-top: 0.9rem; font-size: 0.95rem; line-height: 1.4; color: #333;
+      text-align: center; max-width: 75%; font-style: italic;
+      transition: opacity 0.4s;
+    }
+    .gallery-slide:not(.active) .gallery-query { opacity: 0; }
+    .gallery-carousel-btn {
+      position: absolute; top: 200px; transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9); border: 1px solid #ddd; border-radius: 50%;
+      width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 10; color: #333;
+      transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .gallery-carousel-btn:hover {
+      background: #10b981; color: #fff; border-color: #10b981;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+    }
+    .gallery-carousel-btn-prev { left: 4px; }
+    .gallery-carousel-btn-next { right: 4px; }
+    .gallery-carousel-indicators {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 0.4rem;
+    }
+    .gallery-carousel-indicator {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: #e6e6e6; color: #666; font-size: 11px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .gallery-carousel-indicator:hover { transform: scale(1.1); }
+    .gallery-carousel-indicator:hover { background: #cfcfcf; }
+    .gallery-carousel-indicator.active { background: #485fc7; color: #fff; }
+  </style>
+  <script>
+    (function () {
+      // Mirrors static/videos/queries.csv
+      var galleryData = [
+        { id: "6ubpzfI142I", query: "the green car on the road" },
+        { id: "oaLlG_5RJks", query: "the animal who is riding a motor" },
+        { id: "CrJbNObWpMY", query: "the man in white shirt and black pants" },
+        { id: "C3v4y1trifc", query: "the yellow people in red christmas hat" },
+        { id: "HGczHs7b3lE", query: "We want to track the girl wearing a yellow skirt and carring a blue bag is riding a bike on the right of the road." },
+        { id: "TTicAkWLFjs", query: "the person in the black jar who is holding a hammer" },
+        { id: "0FTqRjP95oQ", query: "the truck running on the road" },
+        { id: "EPDW5OkUSdw", query: "the head with red hair" },
+        { id: "DeWA-51Ve2U", query: "the person who is riding a bike" },
+        { id: "__nI2xSkSg4", query: "the target person the player againest with" },
+        { id: "4dItx6NR44A", query: "the man in gray on the right side of the screen" },
+        { id: "ooF21SIG2gI", query: "the man in white gym suit with number 41 and black hat" },
+        { id: "77FKu3AcVok", query: "the women who is holding a tennis racket in red vest and white hat and short skirt" },
+        { id: "tDARRFSUr5M", query: "the yellow duck on the river bank" },
+        { id: "qXyp87K-B30", query: "the man in yellow" }
+      ];
+
+      var track = document.getElementById('galleryCarouselTrack');
+      var indicators = document.getElementById('galleryCarouselIndicators');
+      if (!track || !indicators) return;
+
+      function ytEmbedUrl(id) {
+        return 'https://www.youtube.com/embed/' + id +
+          '?mute=1&enablejsapi=1' +
+          '&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3';
+      }
+
+      galleryData.forEach(function (item, i) {
+        var slide = document.createElement('div');
+        slide.className = 'gallery-slide';
+        slide.innerHTML =
+          '<div class="gallery-iframe-wrap">' +
+            '<iframe id="gallery-iframe-' + i + '" src="' + ytEmbedUrl(item.id) + '" frameborder="0" ' +
+            'allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>' +
+          '</div>' +
+          '<p class="gallery-query">&ldquo;' + item.query + '&rdquo;</p>';
+        track.appendChild(slide);
+      });
+
+      var currentSlide = 0;
+      var totalSlides = galleryData.length;
+      var players = [];
+
+      window.moveGalleryCarousel = function (direction) {
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        var slides = track.querySelectorAll('.gallery-slide');
+        var prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+        var nextIndex = (currentSlide + 1) % totalSlides;
+
+        slides.forEach(function (slide, i) {
+          slide.classList.remove('active', 'adjacent');
+          slide.style.transform = '';
+          if (i === currentSlide) {
+            slide.classList.add('active');
+            slide.style.transform = 'translateX(0)';
+          } else if (i === prevIndex) {
+            slide.classList.add('adjacent');
+            slide.style.transform = 'translateX(-62%)';
+          } else if (i === nextIndex) {
+            slide.classList.add('adjacent');
+            slide.style.transform = 'translateX(62%)';
+          }
+
+        });
+
+        for (var k = 0; k < players.length; k++) {
+          var p = players[k];
+          if (!p || typeof p.playVideo !== 'function') continue;
+          try {
+            if (k === currentSlide) {
+              p.seekTo(0, true);
+              p.playVideo();
+            } else {
+              p.pauseVideo();
+            }
+          } catch (err) {}
+        }
+
+        var dots = indicators.querySelectorAll('.gallery-carousel-indicator');
+        dots.forEach(function (d, i) { d.classList.toggle('active', i === currentSlide); });
+      };
+
+      for (var j = 0; j < totalSlides; j++) {
+        (function (idx) {
+          var dot = document.createElement('div');
+          dot.className = 'gallery-carousel-indicator';
+          dot.textContent = idx + 1;
+          dot.onclick = function () { currentSlide = idx; window.moveGalleryCarousel(0); };
+          indicators.appendChild(dot);
+        })(j);
+      }
+
+      window.moveGalleryCarousel(0);
+
+      // Load the YouTube IFrame API so only the active video plays and we advance on end.
+      window.onYouTubeIframeAPIReady = function () {
+        for (var i = 0; i < galleryData.length; i++) {
+          (function (idx) {
+            players[idx] = new YT.Player('gallery-iframe-' + idx, {
+              events: {
+                'onReady': function (e) {
+                  try {
+                    if (idx === currentSlide) {
+                      e.target.playVideo();
+                    } else {
+                      e.target.pauseVideo();
+                    }
+                  } catch (err) {}
+                },
+                'onStateChange': function (e) {
+                  if (e.data === YT.PlayerState.ENDED && idx === currentSlide) {
+                    window.moveGalleryCarousel(1);
+                  }
+                }
+              }
+            });
+          })(i);
+        }
+      };
+      if (!document.getElementById('youtube-iframe-api')) {
+        var s = document.createElement('script');
+        s.id = 'youtube-iframe-api';
+        s.src = 'https://www.youtube.com/iframe_api';
+        document.body.appendChild(s);
+      }
+    })();
+  </script>
+</section>
+
+<section class="section" style="padding-top: 1rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title has-text-centered">🪧 Poster</h2>
+        <p class="has-text-centered" style="font-size: 1rem; color: #888; font-style: italic; margin-top: 0.5rem;">
+          Coming soon&hellip;
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 1rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title has-text-centered">Conclusion</h2>
         <p class="has-text-justified">
           In this work, we address template-free tracking where the tracker localizes objects 
           using only natural language, without visual templates or box initialization. We show 
@@ -228,14 +565,54 @@
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title">Citation</h2>
-    <pre><code>@article{To be updated soon... <!--park2021nerfies,
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title has-text-centered">📚 Citation</h2>
+        <div style="position: relative;">
+          <button id="copy-bibtex-btn" type="button"
+                  title="Copy citation"
+                  aria-label="Copy citation"
+                  style="position: absolute; top: 8px; right: 8px; background: transparent; border: none; cursor: pointer; padding: 6px; color: #888; z-index: 2;">
+            <i class="fas fa-copy" style="font-size: 18px;"></i>
+            <span id="copy-bibtex-feedback"
+                  style="display: none; margin-left: 6px; font-size: 12px; color: #2c7;">Copied!</span>
+          </button>
+<pre><code id="bibtex-content">@article{To be updated soon... <!--park2021nerfies,
   author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
   title     = {Nerfies: Deformable Neural Radiance Fields},
   journal   = {ICCV},
   year      = {2021},-->
 }</code></pre>
+        </div>
+      </div>
+    </div>
   </div>
+  <script>
+    (function () {
+      var btn = document.getElementById('copy-bibtex-btn');
+      var src = document.getElementById('bibtex-content');
+      var feedback = document.getElementById('copy-bibtex-feedback');
+      if (!btn || !src) return;
+      btn.addEventListener('click', function () {
+        var text = src.innerText;
+        var done = function () {
+          feedback.style.display = 'inline';
+          setTimeout(function () { feedback.style.display = 'none'; }, 1500);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done);
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          done();
+        }
+      });
+    })();
+  </script>
 </section>
 
 
@@ -245,7 +622,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page.You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. This website is licensed under a 
+            This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page. You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. This website is licensed under a 
             <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>

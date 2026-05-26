@@ -75,6 +75,11 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
   <style>
+    #BibTeX pre {
+      font-size: 0.82rem;
+      line-height: 1.5;
+      padding: 1.25rem 1.5rem;
+    }
     /* ---------- Mobile responsiveness (≤ 768px) ---------- */
     @media screen and (max-width: 768px) {
       /* Hero publication title */
@@ -570,14 +575,14 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title has-text-centered">🪧 Poster</h2>
+        <h2 class="title has-text-centered">🪧Poster</h2>
         <figure class="image">
           <a href="./static/images/MVLM_poster.png" target="_blank" rel="noopener">
             <img src="./static/images/MVLM_poster.png" alt="MVLM poster">
           </a>
         </figure>
         <p class="has-text-centered" style="margin-top: 0.8rem; font-size: 0.9rem; color: #555;">
-          <strong>Poster.</strong> Click to view full size.
+          Click the poster to view full size.
         </p>
       </div>
     </div>
@@ -613,7 +618,7 @@
   <div class="container is-max-desktop content">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title has-text-centered">📚 Citation</h2>
+        <h2 class="title has-text-centered">📚Citation</h2>
         <div style="position: relative;">
           <button id="copy-bibtex-btn" type="button"
                   title="Copy citation"

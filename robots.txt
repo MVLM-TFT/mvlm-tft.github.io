@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mvlm-tft.github.io/sitemap.xml
